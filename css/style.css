@@ -1,0 +1,81 @@
+*{
+   
+}
+
+body {
+   background: url('../img/gold_scale.png');
+   font-family: 'Tahoma';
+}
+
+#button-weather {
+   display: block;
+   width: 150px;
+   height: 50px;
+   background-color: #1abc9d;
+   color: white;
+   border-radius: 25px;
+   
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+}
+
+#weather-card{
+   width: 95%;
+   height: 290px;
+   
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+
+}
+
+p#weather-header{
+   font-size: 22px;
+   font-weight: bold;
+   padding-bottom: 10px;
+   color: #8d6363;
+}
+
+table#weather-data{
+   width: 100%;
+   color: #8d6363;
+}
+
+td{
+   text-align: left;
+   border-bottom: 2px solid rgba(141, 99, 99, 0.12);
+   padding: 7px 7px 7px 0px;
+   font-style: italic;
+}
+
+td.cell-header{
+  font-weight: bold;
+   
+}
+
+.header-divider{
+   color: white;
+}
+
+div.item-divider{
+   background-color: #1abc9d;
+}
+
+span.header-text{
+   font-size: 25px;
+   vertical-align: middle;
+}
+
+img.weather-icon{
+   width: 50px;
+   height: 50px;
+   display: inline-block;
+   vertical-align: middle;
+}

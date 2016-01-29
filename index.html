@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+   <title></title>
+
+   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+
+   <!-- ionic/angularjs js -->
+   <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+   <!-- cordova script (this will be a 404 during development) -->
+   <script src="cordova.js"></script>
+
+   <!-- your app's js -->
+   <script src="js/app.js"></script>
+   <script src="js/weather.js"></script>
+</head>
+
+<body ng-app="starter" ng-controller="MainController" ng-cloak="">
+   <div id="wrapper">
+
+      <!-- Button to get weather -->
+      <div class="button" id="button-weather" ng-click="getLocation()" ng-hide="isSearching">
+         Get My Weather
+      </div>
+
+      <!-- Card that shows weather -->
+      <div class="card" id="weather-card" ng-show="weatherData.length != 0">
+        
+         <!-- Card header -->
+         <div class="item item-divider header-divider">
+            <span class="header-text">{{weatherData.name}}, {{weatherData.sys.country}}</span>
+            <img class="weather-icon" ng-src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png" alt="weather-icon">
+         </div>
+
+        <!-- Card content -->
+         <div class="item item-wrap">
+            <p id="weather-header">Current Weather:</p>
+            
+            <table id="weather-data">
+               <tr>
+                  <td class="cell-header">Temperature</td>
+                  <td>{{weatherData.main.temp}} &#xB0;C</td>
+               </tr>
+               <tr>
+                  <td class="cell-header">{{weatherData.weather[0].main}}</td>
+                  <td>{{weatherData.weather[0].description}} ({{weatherData.clouds.all}}%)</td>
+               </tr>
+               <tr>
+                  <td class="cell-header">Humidity</td>
+                  <td>{{weatherData.main.humidity}}%</td>
+               </tr>
+               <tr>
+                  <td class="cell-header">Wind Speed</td>
+                  <td>{{weatherData.wind.speed}} m/c</td>
+               </tr>
+            </table>
+            
+         </div>
+      </div>
+
+   </div>
+</body>
+
+</html>
